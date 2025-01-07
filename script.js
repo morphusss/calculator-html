@@ -1,10 +1,13 @@
-equationSymbols = [];
+// TODO: Make horizontal scroll on result field
+// TODO: Make final calculation 
+
+let equationSymbols = [];
 
 console.log(equationSymbols);
 
 const resultElement = document.querySelector('.result');
 
-result = '31';
+let result = '';
 
 resultElement.innerHTML = result;
 
@@ -45,80 +48,143 @@ const resetButton = document.getElementById('reset');
 const equalButton = document.getElementById('equal');
 
 zeroButton.onclick = () => {
-    resultElement.innerHTML = 0;
+    console.log('0 pressed');
     equationSymbols.push('0');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 oneButton.onclick = () => {
-    resultElement.innerHTML = 1;
+    console.log('1 pressed');
+    equationSymbols.push('1');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 twoButton.onclick = () => {
-    resultElement.innerHTML = 2;
+    console.log('2 pressed');
+    equationSymbols.push('2');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 threeButton.onclick = () => {
-    resultElement.innerHTML = 3;
+    console.log('3 pressed');
+    equationSymbols.push('3');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 fourButton.onclick = () => {
-    resultElement.innerHTML = 4;
+    console.log('4 pressed');
+    equationSymbols.push('4');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 fiveButton.onclick = () => {
-    resultElement.innerHTML = 5;
+    console.log('5 pressed');
+    equationSymbols.push('5');
+    resultElement.innerHTML = displayEquationSymbols();
+    
 }
 
 sixButton.onclick = () => {
-    resultElement.innerHTML = 6;
+    console.log('6 pressed');
+    equationSymbols.push('6');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 sevenButton.onclick = () => {
-    resultElement.innerHTML = 7;
+    console.log('7 pressed');
+    equationSymbols.push('7');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 eightButton.onclick = () => {
-    resultElement.innerHTML = 8;
+    console.log('8 pressed');
+    equationSymbols.push('8');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 nineButton.onclick = () => {
-    resultElement.innerHTML = 9;
+    console.log('9 pressed');
+    equationSymbols.push('9');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 delButton.onclick = () => {
-    resultElement.innerHTML = ' ';
-    equationSymbols.pop();
+    console.log('DEL pressed');
+    deleteLastSymbol();
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 plusButton.onclick = () => {
-    resultElement.innerHTML = '+';
+    console.log('plus pressed');
+    equationSymbols.push(' + ');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 minusButton.onclick = () => {
-    resultElement.innerHTML = '-';
+    console.log('minus pressed');
+    equationSymbols.push(' - ');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 dotButton.onclick = () => {
-    resultElement.innerHTML = '.';
+    console.log('dot pressed');
+    equationSymbols.push('.');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 divideButton.onclick = () => {
-    resultElement.innerHTML = '/';
+    console.log('divide pressed');
+    equationSymbols.push(' / ');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 multButton.onclick = () => {
-    resultElement.innerHTML = 'x';
+    console.log('multiply pressed');
+    equationSymbols.push(' * ');
+    resultElement.innerHTML = displayEquationSymbols();
 }
 
 resetButton.onclick = () => {
+    console.log('RESET pressed');
+    deleteAllSymbols();
     resultElement.innerHTML = ' ';
 }
 
 equalButton.onclick = () => {
     resultElement.innerHTML = 'wait...';
+    console.log('= pressed');
+    console.log(equationSymbols);
+    calculateAllSymbols();
 }
 
-delButton.onclick()
 
 
+function displayEquationSymbols() {
+    let symbols = "";
 
+    for (let i = 0; i < equationSymbols.length; i++){
+
+        symbols += equationSymbols[i];
+
+    }
+
+    return symbols;
+}
+
+function deleteAllSymbols() {
+    equationSymbols = [];
+    console.log(equationSymbols);
+}
+
+function deleteLastSymbol() {
+    equationSymbols.length = equationSymbols.length - 1; 
+    console.log(equationSymbols);
+}
+
+
+// function calculateAllSymbols() {
+//     const variable = displayEquationSymbols();
+//     const finalResult = parseFloat(variable, 10);
+//     console.log(variable);
+//     console.log(finalResult);
+// }
