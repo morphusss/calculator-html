@@ -1,7 +1,18 @@
+@font-face {
+    font-family: "League Spartan";
+    src: url("./design/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf");
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.font{
+    font-family: "League Spartan";
+    font-weight: 700;
+    font-size: 32px;
 }
 
 .main {
@@ -24,12 +35,20 @@
 
 .calc-result {
     width: 100%;
-    height: 8vh;
+    height: 10vh;
     color: rgba(255,254,253,255);
-    text-align: right;
     background-color: rgba(24,30,51,255);
     border-radius: 7px;
-    
+}
+
+.result-container{
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    font-size: 45px;
 }
 
 .calc-buttons {
@@ -39,6 +58,10 @@
     background-color: rgba(24,30,51,255);
     border-radius: 7px;
 }   
+
+.border-button{
+    border: 0px;
+}
 
 .row {
     display: grid;
@@ -50,11 +73,15 @@
 }
 
 .num-func {
+    display: grid;
+    align-items: center;
+    justify-content: center;
     color: rgba(78,84,94,255);
     background-color: rgba(234,226,218,255);
     width: 100%;
     height: 6vh;
     border-radius: 10px;
+    
 }
 
 .DEL {
@@ -75,7 +102,7 @@
 .reset{
     color: rgba(255,254,253,255);
     background-color: rgba(101,114,152,255);
-    height: 4vh;
+    height: 6vh;
     width: 100%;
     border-radius: 10px;
 }
@@ -83,7 +110,7 @@
 .equal {
     color: rgba(255,254,253,255);
     background-color: rgba(209,63,48,255);
-    height: 4vh;
+    height: 6vh;
     width: 100%;
     border-radius: 10px;
 }
