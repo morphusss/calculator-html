@@ -34,8 +34,8 @@
 }
 
 .calc-result {
-    width: 100%;
-    height: 10vh;
+    width: 30vw;
+    height: fit-content;
     color: rgba(255,254,253,255);
     background-color: rgba(24,30,51,255);
     border-radius: 7px;
@@ -49,6 +49,8 @@
     justify-content: end;
     align-items: center;
     font-size: 45px;
+    overflow-x: auto;
+    overflow-wrap: anywhere;
 }
 
 .calc-buttons {

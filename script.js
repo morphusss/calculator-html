@@ -1,5 +1,5 @@
 // TODO: Make horizontal scroll on result field
-// TODO: Make final calculation 
+// Small bug: if type 1.5 * 2 = 3, but if type 2 * 1.5 = 2 etc. IDK how to fix it
 
 let equationSymbols = [];
 
@@ -7,9 +7,7 @@ console.log(equationSymbols);
 
 const resultElement = document.querySelector('.result');
 
-let result = '';
-
-resultElement.innerHTML = result;
+resultElement.innerHTML = '';
 
 const zeroButton = document.getElementById('num0');
 
@@ -80,8 +78,7 @@ fourButton.onclick = () => {
 fiveButton.onclick = () => {
     console.log('5 pressed');
     equationSymbols.push('5');
-    resultElement.innerHTML = displayEquationSymbols();
-    
+    resultElement.innerHTML = displayEquationSymbols();   
 }
 
 sixButton.onclick = () => {
@@ -151,10 +148,9 @@ resetButton.onclick = () => {
 }
 
 equalButton.onclick = () => {
-    resultElement.innerHTML = 'wait...';
     console.log('= pressed');
     console.log(equationSymbols);
-    calculateAllSymbols();
+    resultElement.innerHTML = calculateAllSymbols();
 }
 
 
@@ -181,10 +177,32 @@ function deleteLastSymbol() {
     console.log(equationSymbols);
 }
 
+function calculateAllSymbols() {
+    const symbols = displayEquationSymbols().match(/(\d+(\.\d+)?|[+\-*/])/g);
 
-// function calculateAllSymbols() {
-//     const variable = displayEquationSymbols();
-//     const finalResult = parseFloat(variable, 10);
-//     console.log(variable);
-//     console.log(finalResult);
-// }
+    let result = parseFloat(symbols[0]);
+
+    for (let i = 1; i < symbols.length; i +=2) {
+        const operator = symbols[i];
+        const nextSymbol = parseInt(symbols[i + 1]);
+
+        switch (operator) {
+            case '+': 
+                result += nextSymbol;
+                break;
+            case '-': 
+                result -= nextSymbol;
+                break;
+            case '*': 
+                result *= nextSymbol;
+                break;
+            case '/': 
+                result /= nextSymbol;
+                break;
+        }
+    }  
+
+    console.log(result)
+
+    return result;
+}
