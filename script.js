@@ -1,4 +1,3 @@
-// TODO: Make horizontal scroll on result field
 // Small bug: if type 1.5 * 2 = 3, but if type 2 * 1.5 = 2 etc. IDK how to fix it
 
 let equationSymbols = [];

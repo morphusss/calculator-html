@@ -65,6 +65,7 @@
     border: 0px;
 }
 
+
 .row {
     display: grid;
     margin-bottom: 4%;
@@ -86,6 +87,10 @@
     
 }
 
+.num-func:active{
+    background-color: rgba(255,254,254,255);
+}
+
 .DEL {
     color: rgba(255,254,253,255);
     background-color: rgba(101,114,152,255);
@@ -94,11 +99,19 @@
     border-radius: 10px;
 }
 
+.DEL:active{
+    background-color: rgba(163,178,224,255);
+}
+
 .operators {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: 45% 45%;
     grid-template-rows: 100%;
+}
+
+.operators:active{
+    background-color: rgba(255,254,254,255);
 }
 
 .reset{
@@ -109,10 +122,18 @@
     border-radius: 10px;
 }
 
+.reset:active{
+    background-color: rgba(163,178,225,255);
+}
+
 .equal {
     color: rgba(255,254,253,255);
     background-color: rgba(209,63,48,255);
     height: 6vh;
     width: 100%;
     border-radius: 10px;
+}
+
+.equal:active{
+    background-color: rgba(248,108,90,255);
 }
