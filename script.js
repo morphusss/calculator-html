@@ -6,7 +6,7 @@ console.log(equationSymbols);
 
 const resultElement = document.querySelector('.result');
 
-resultElement.innerHTML = '';
+resultElement.innerHTML = '0';
 
 const zeroButton = document.getElementById('num0');
 
@@ -143,7 +143,7 @@ multButton.onclick = () => {
 resetButton.onclick = () => {
     console.log('RESET pressed');
     deleteAllSymbols();
-    resultElement.innerHTML = ' ';
+    resultElement.innerHTML = '0';
 }
 
 equalButton.onclick = () => {
