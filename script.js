@@ -202,6 +202,9 @@ function calculateAllSymbols() {
     }  
 
     console.log(result)
+    
+    equationSymbols = [];
+    equationSymbols.push(result);
 
     return result;
 }
